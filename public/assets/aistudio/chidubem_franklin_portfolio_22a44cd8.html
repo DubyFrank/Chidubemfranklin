@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Chidubem Franklin | Aspiring Developer &amp; UI Designer</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#0B1120',
+              900: '#0F172A',
+              800: '#1E293B',
+              700: '#334155',
+            },
+            accent: {
+              blue: '#2563EB',
+              cyan: '#38BDF8',
+              emerald: '#10B981',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-scroll-and-glow">
+    /* Subtle custom glowing effects */
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.35);
+    }
+    .glow-blue {
+      box-shadow: 0 0 35px -8px rgba(37, 99, 235, 0.4);
+    }
+    /* Safe mobile tap target minimums */
+    .min-tap {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    /* Glassmorphism backgrounds */
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-[#0F172A] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
+<!-- BEGIN: NavigationBar -->
+<header class="sticky top-0 z-50 w-full glass-nav border-b border-slate-800/80 px-4 py-3 transition-all duration-200">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center space-x-2 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1" href="#hero">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          CF
+        </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold tracking-tight text-white flex items-center gap-1">
+            Chidubem F.
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+</span>
+<span class="text-[10px] text-slate-400 font-medium leading-none">COOU • Tech &amp; Design</span>
+</div>
+</a>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2">
+<a class="min-tap inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-sm shadow-cyan-500/25 active:scale-95 transition-all" href="#contact">
+          Let's Talk
+        </a>
+<!-- Mobile Drawer Toggle Button -->
+<button aria-label="Open Navigation Menu" class="min-tap w-11 h-11 flex items-center justify-center rounded-xl bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 active:bg-slate-700 transition" id="menu-toggle-btn">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Collapsible Mobile Menu Drawer -->
+<nav class="hidden max-w-md mx-auto pt-3 pb-2 border-t border-slate-800/60 mt-3 flex-col gap-1 transition-all" id="mobile-nav-menu">
+<a class="px-3 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 flex items-center justify-between" href="#about">
+        About Me <span>→</span>
+</a>
+<a class="px-3 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 flex items-center justify-between" href="#technologies">
+        Tech Stack <span>→</span>
+</a>
+<a class="px-3 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 flex items-center justify-between" href="#projects">
+        Featured Projects <span>→</span>
+</a>
+<a class="px-3 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 flex items-center justify-between" href="#skills">
+        Skills &amp; Strengths <span>→</span>
+</a>
+<a class="px-3 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 flex items-center justify-between" href="#journey">
+        My Journey <span>→</span>
+</a>
+<a class="px-3 py-2.5 rounded-lg text-xs font-semibold text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 flex items-center justify-between mt-1" href="#contact">
+        Send a Message <span>→</span>
+</a>
+</nav>
+</header>
+<!-- END: NavigationBar -->
+<main class="max-w-md mx-auto px-4 space-y-12 pb-16">
+<!-- BEGIN: HeroSection -->
+<section class="pt-6 space-y-6" data-purpose="hero-presentation" id="hero">
+<!-- Availability Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 shadow-inner">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+<span class="text-xs font-medium text-slate-300">Open to Internships &amp; Tech Roles</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<div class="space-y-3">
+<h1 class="text-3xl font-extrabold tracking-tight text-white leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-400">Chidubem Franklin</span>.<br/>
+          I Build Digital Experiences.
+        </h1>
+<p class="text-sm leading-relaxed text-slate-400">
+          Tech enthusiast &amp; aspiring Developer &amp; UI/UX Designer studying Political Science at <strong class="text-slate-200 font-semibold">COOU</strong>, blending analytical thinking with modern digital product development.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-3 pt-1">
+<a class="min-tap w-full inline-flex items-center justify-center px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 active:scale-[0.98] transition" href="#projects">
+<span>Explore Projects</span>
+<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="min-tap w-full inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-200 font-medium text-sm active:scale-[0.98] transition" href="#contact">
+<svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Download CV / Resume</span>
+</a>
+</div>
+<!-- Social Media Connect Pills -->
+<div class="flex items-center gap-3 pt-1">
+<span class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Connect:</span>
+<a aria-label="GitHub Profile" class="min-tap p-2.5 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="LinkedIn Profile" class="min-tap p-2.5 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+</a>
+<a aria-label="Send Direct Email" class="min-tap p-2.5 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition" href="mailto:chidubem.franklin@example.com">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a aria-label="Twitter / X Profile" class="min-tap p-2.5 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition" href="https://twitter.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+</div>
+<!-- Mobile Visual Showcase: Photo Card & Mini Floating Terminal -->
+<div class="relative pt-3" data-purpose="hero-visual-card">
+<!-- Glowing gradient backdrop -->
+<div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-600 rounded-3xl opacity-30 blur-xl"></div>
+<!-- Main Profile Image Container -->
+<div class="relative overflow-hidden rounded-2xl border-2 border-slate-700/80 bg-slate-900 shadow-2xl">
+<div class="aspect-[4/5] w-full overflow-hidden bg-slate-950 relative">
+<img alt="Portrait of Chidubem Franklin in stylish casual wear" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1DGbdpoWtoP8d3ARFrY9L1manBigza6P0Uuu28tZ5GVjDh-g_L-T8DNUcmeV-l8kdtadF0MDgPMiP6-UvCtZFUrXdlu3GWGalN8wzmLQYxtx5WxnlKjaFnEbJ-kmGGGuCcaZyMEBChrBUlbXCKyjGFVJA1q5PLKx_5YiVhLX7kKSUX-stILFvacP2QP2H3lE84jCel7LQ5HNhazZ55O8p3OvGZRBURr992ltXhGBB39aSpqS6Q4Edbw"/>
+<!-- Vignette overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+<!-- In-Photo Tag -->
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/60 text-[11px] font-medium text-slate-200">
+<span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                Chukwuemeka Odumegwu Ojukwu Univ.
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-blue-600/90 text-[11px] font-bold text-white shadow">
+                Pol. Sci '26
+              </span>
+</div>
+</div>
+</div>
+<!-- Floating Mini IDE Code snippet widget -->
+<div class="mt-3 p-3.5 rounded-xl bg-slate-900/95 border border-slate-800 shadow-xl font-mono text-xs">
+<div class="flex items-center justify-between border-b border-slate-800/80 pb-2 mb-2">
+<div class="flex items-center space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+</div>
+<span class="text-[10px] text-slate-500 font-sans">developer.js</span>
+</div>
+<div class="space-y-1 text-slate-300">
+<p><span class="text-blue-400">const</span> <span class="text-cyan-300">innovator</span> = {</p>
+<p class="pl-4">name: <span class="text-emerald-400">"Chidubem Franklin"</span>,</p>
+<p class="pl-4">discipline: <span class="text-emerald-400">"Political Science × Tech"</span>,</p>
+<p class="pl-4">focus: [<span class="text-amber-300">"Frontend"</span>, <span class="text-amber-300">"UI/UX"</span>, <span class="text-amber-300">"Systems"</span>],</p>
+<p class="pl-4">available: <span class="text-cyan-400">true</span></p>
+<p>};</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: TechnologiesSection -->
+<section class="space-y-4 pt-2" data-purpose="tech-stack" id="technologies">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Toolbox</span>
+<h2 class="text-xl font-bold text-white tracking-tight">Technologies I Work With</h2>
+</div>
+<div class="space-y-3">
+<!-- Frontend & Languages -->
+<div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Frontend &amp; Languages
+            </span>
+<span class="text-[10px] text-slate-500">Core</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">HTML5</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">CSS3 / Tailwind</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 font-medium">JavaScript (ES6+)</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-medium">React</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300">Python</span>
+</div>
+</div>
+<!-- Tools & Version Control -->
+<div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Workflow &amp; Platforms
+            </span>
+<span class="text-[10px] text-slate-500">DevOps &amp; IDE</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">Git</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">GitHub</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">VS Code</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">Terminal</span>
+</div>
+</div>
+<!-- Design & Prototyping -->
+<div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Design &amp; UI/UX
+            </span>
+<span class="text-[10px] text-slate-500">Visual</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 font-medium">Figma</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">Wireframing</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">Mobile-First UI</span>
+<span class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700/70 text-slate-200">Design Systems</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TechnologiesSection -->
+<!-- BEGIN: AboutMeSection -->
+<section class="space-y-4 pt-2" data-purpose="biography-cards" id="about">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Background</span>
+<h2 class="text-xl font-bold text-white tracking-tight">A Little About Me</h2>
+</div>
+<!-- Narrative Bio -->
+<div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-3 leading-relaxed text-sm text-slate-300">
+<p>
+          I am a university student at <strong class="text-white">Chukwuemeka Odumegwu Ojukwu University (COOU)</strong> studying Political Science, with a deep passion for software development and user-centered interface design.
+        </p>
+<p class="text-slate-400">
+          My academic training equips me with acute critical inquiry, structural governance insight, and behavioral analysis. I translate these foundational problem-solving strengths directly into writing clean code, designing thoughtful layouts, and building intuitive digital products.
+        </p>
+</div>
+<!-- 3 Key Pillars -->
+<div class="space-y-2.5">
+<!-- Currently Learning -->
+<div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex items-start gap-3">
+<div class="p-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0 mt-0.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Currently Learning</h3>
+<p class="text-xs text-slate-400 mt-0.5">Modern Full-Stack Development, React component architecture, and advanced state handling.</p>
+</div>
+</div>
+<!-- What I Enjoy Building -->
+<div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex items-start gap-3">
+<div class="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0 mt-0.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">What I Enjoy Building</h3>
+<p class="text-xs text-slate-400 mt-0.5">Interactive web tools, campus utility portals, and accessible interfaces that simplify student lives.</p>
+</div>
+</div>
+<!-- Career Goal -->
+<div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex items-start gap-3">
+<div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">My Career Goal</h3>
+<p class="text-xs text-slate-400 mt-0.5">Software Engineering &amp; Tech Product Innovation, creating scalable solutions for African and global ecosystems.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutMeSection -->
+<!-- BEGIN: FeaturedProjectsSection -->
+<section class="space-y-4 pt-2" data-purpose="portfolio-showcase" id="projects">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Selected Work</span>
+<h2 class="text-xl font-bold text-white tracking-tight">Projects That Bring Ideas to Life</h2>
+</div>
+<!-- Project Cards List -->
+<div class="space-y-5">
+<!-- Project 1: Student Productivity App -->
+<article class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg transition duration-200 hover:border-slate-700">
+<!-- Thumbnail Graphic -->
+<div class="h-36 w-full bg-gradient-to-br from-blue-900/70 via-indigo-900/40 to-slate-950 p-4 flex flex-col justify-between relative border-b border-slate-800/80">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-blue-500/20 border border-blue-400/30 text-[10px] font-mono text-cyan-300">v1.2 Active</span>
+<div class="flex space-x-1">
+<span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+</div>
+</div>
+<div>
+<span class="text-xs font-semibold text-slate-400">Productivity Tool</span>
+<h3 class="text-lg font-bold text-white tracking-tight">Student Study &amp; Task Planner</h3>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<p class="text-xs text-slate-300 leading-relaxed">
+              A comprehensive daily task and exam study timeline manager built for undergraduate students managing course loads and assignment deadlines.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-cyan-300 border border-slate-700">UI Design</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">JavaScript</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">Productivity</span>
+</div>
+<!-- Action buttons -->
+<div class="pt-2 flex items-center gap-2">
+<a class="min-tap flex-1 inline-flex items-center justify-center px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition" href="#contact">
+                View Case Study
+              </a>
+<a class="min-tap px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-300 transition" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                GitHub Repo
+              </a>
+</div>
+</div>
+</article>
+<!-- Project 2: Personal Finance Dashboard -->
+<article class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg transition duration-200 hover:border-slate-700">
+<!-- Thumbnail Graphic -->
+<div class="h-36 w-full bg-gradient-to-br from-emerald-950/60 via-slate-900 to-slate-950 p-4 flex flex-col justify-between relative border-b border-slate-800/80">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-400/30 text-[10px] font-mono text-emerald-300">Live Demo</span>
+<svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="text-xs font-semibold text-slate-400">Finance &amp; Data Viz</span>
+<h3 class="text-lg font-bold text-white tracking-tight">Personal Finance Dashboard</h3>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<p class="text-xs text-slate-300 leading-relaxed">
+              Interactive financial tracking interface that helps university learners allocate stipends, monitor recurring subscriptions, and budget textbooks.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-emerald-300 border border-slate-700">React</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">Data Viz</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">Responsive</span>
+</div>
+<!-- Action buttons -->
+<div class="pt-2 flex items-center gap-2">
+<a class="min-tap flex-1 inline-flex items-center justify-center px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition" href="#contact">
+                View Case Study
+              </a>
+<a class="min-tap px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-300 transition" href="#contact">
+                Live Prototype
+              </a>
+</div>
+</div>
+</article>
+<!-- Project 3: Campus Marketplace -->
+<article class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg transition duration-200 hover:border-slate-700">
+<!-- Thumbnail Graphic -->
+<div class="h-36 w-full bg-gradient-to-br from-sky-950/70 via-blue-900/30 to-slate-950 p-4 flex flex-col justify-between relative border-b border-slate-800/80">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-sky-500/20 border border-sky-400/30 text-[10px] font-mono text-sky-300">UX Concept</span>
+<svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="text-xs font-semibold text-slate-400">P2P Platform Concept</span>
+<h3 class="text-lg font-bold text-white tracking-tight">Campus Marketplace UI</h3>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<p class="text-xs text-slate-300 leading-relaxed">
+              A peer-to-peer student marketplace wireframe and web prototype for exchanging textbooks, electronics, and dorm appliances safely.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-cyan-300 border border-slate-700">Web Dev</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">UX Research</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300 border border-slate-700">Prototyping</span>
+</div>
+<!-- Action buttons -->
+<div class="pt-2 flex items-center gap-2">
+<a class="min-tap flex-1 inline-flex items-center justify-center px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition" href="#contact">
+                View Case Study
+              </a>
+<a class="min-tap px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-300 transition" href="#contact">
+                Figma File
+              </a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedProjectsSection -->
+<!-- BEGIN: SkillsAndStrengthsSection -->
+<section class="space-y-4 pt-2" data-purpose="categorized-skills" id="skills">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Competencies</span>
+<h2 class="text-xl font-bold text-white tracking-tight">My Skills &amp; Strengths</h2>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Category 1: Development -->
+<div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2.5">
+<div class="flex items-center space-x-2">
+<span class="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<h3 class="text-sm font-bold text-white">Development</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">HTML5</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">CSS3 / Flexbox / Grid</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-blue-900/40 border border-blue-500/40 text-cyan-300 font-medium">JavaScript ES6+</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">React.js</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Python Basics</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">DOM Manipulation</span>
+</div>
+</div>
+<!-- Category 2: Design -->
+<div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2.5">
+<div class="flex items-center space-x-2">
+<span class="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<h3 class="text-sm font-bold text-white">Design &amp; Prototyping</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-full bg-cyan-900/40 border border-cyan-500/40 text-cyan-300 font-medium">Figma</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Wireframing</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Mobile-First UI</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Design Systems</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">User Flow Mapping</span>
+</div>
+</div>
+<!-- Category 3: Professional & Analytical -->
+<div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2.5">
+<div class="flex items-center space-x-2">
+<span class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<h3 class="text-sm font-bold text-white">Professional &amp; Soft Skills</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Critical Analysis</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Problem Solving</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Clear Communication</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Team Collaboration</span>
+<span class="px-2.5 py-1 text-xs rounded-full bg-slate-800 border border-slate-700 text-slate-300">Self-Directed Learning</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsAndStrengthsSection -->
+<!-- BEGIN: LearningJourneyTimeline -->
+<section class="space-y-4 pt-2" data-purpose="experience-timeline" id="journey">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Milestones</span>
+<h2 class="text-xl font-bold text-white tracking-tight">My Journey So Far</h2>
+</div>
+<!-- Vertical Timeline -->
+<div class="relative pl-6 border-l-2 border-slate-800 space-y-6">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-slate-900 shadow"></div>
+<div class="bg-slate-900/90 border border-slate-800 p-3.5 rounded-xl space-y-1">
+<span class="text-[10px] font-mono font-semibold text-cyan-400 uppercase">Phase 1 • Discovery</span>
+<h3 class="text-sm font-bold text-white">Discovered Coding &amp; Digital Design</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              While analyzing public institutions and digital policy during Political Science coursework at COOU, realized software is the fastest vehicle for real-world impact.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-900 shadow"></div>
+<div class="bg-slate-900/90 border border-slate-800 p-3.5 rounded-xl space-y-1">
+<span class="text-[10px] font-mono font-semibold text-cyan-400 uppercase">Phase 2 • Foundations</span>
+<h3 class="text-sm font-bold text-white">Mastered Web Core &amp; UI Prototyping</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Dedicated intensive hours to mastering semantic HTML, modern responsive CSS layouts, JavaScript ES6 fundamentals, and wireframing user flows in Figma.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-sky-400 border-4 border-slate-900 shadow"></div>
+<div class="bg-slate-900/90 border border-slate-800 p-3.5 rounded-xl space-y-1">
+<span class="text-[10px] font-mono font-semibold text-cyan-400 uppercase">Phase 3 • Application</span>
+<h3 class="text-sm font-bold text-white">Built Personal &amp; Campus Tools</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Shipped student-centric projects: task management apps, budget calculators, and community product concepts, focusing on clean code and intuitive UI.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 4 (Current) -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-400 border-4 border-slate-900 shadow animate-pulse"></div>
+<div class="bg-gradient-to-r from-slate-900 to-slate-900/80 border border-emerald-500/30 p-3.5 rounded-xl space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono font-semibold text-emerald-400 uppercase">Current • Next Horizon</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">Now</span>
+</div>
+<h3 class="text-sm font-bold text-white">Seeking Internships &amp; Tech Roles</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Actively pursuing internship roles, junior front-end positions, and tech collaborations where analytical rigor and creative coding drive value.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LearningJourneyTimeline -->
+<!-- BEGIN: ContactSection -->
+<section class="space-y-4 pt-2" data-purpose="contact-form-and-reachout" id="contact">
+<div class="border-b border-slate-800 pb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Get In Touch</span>
+<h2 class="text-xl font-bold text-white tracking-tight">Have an Opportunity or Project?</h2>
+</div>
+<div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+<p class="text-xs text-slate-300 leading-relaxed">
+          I'm always interested in learning, collaborating on impactful ideas, and joining forward-thinking teams. Send me a message below or email me directly!
+        </p>
+<!-- Fast Contact Pills -->
+<div class="flex flex-col gap-2">
+<a class="min-tap inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-xs font-medium text-slate-200 hover:text-white hover:border-cyan-500 transition" href="mailto:chidubem.franklin@example.com">
+<svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            chidubem.franklin@example.com
+          </a>
+</div>
+<!-- Mobile-Optimized Contact Form -->
+<form action="#" class="space-y-3 pt-2" id="portfolio-contact-form" method="POST">
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1" for="contact-name">Your Name</label>
+<input class="w-full rounded-xl bg-slate-950 border border-slate-700/80 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none" id="contact-name" name="name" placeholder="e.g. Alex Johnson" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1" for="contact-email">Your Email</label>
+<input class="w-full rounded-xl bg-slate-950 border border-slate-700/80 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none" id="contact-email" name="email" placeholder="alex@company.com" required="" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1" for="contact-message">Message / Opportunity Details</label>
+<textarea class="w-full rounded-xl bg-slate-950 border border-slate-700/80 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none resize-none" id="contact-message" name="message" placeholder="Tell me about the internship, project, or role you have in mind..." required="" rows="4"></textarea>
+</div>
+<button class="min-tap w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-sky-600 to-cyan-500 text-white font-semibold text-xs shadow-md shadow-blue-500/25 active:scale-95 transition" type="submit">
+<span>Send Message</span>
+<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</form>
+<!-- Form Feedback Banner (Hidden by default) -->
+<div class="hidden p-3 rounded-xl bg-emerald-950/70 border border-emerald-500/50 text-emerald-300 text-xs text-center" id="form-success-banner">
+          Thank you! Your message has been prepared. I'll get back to you promptly.
+        </div>
+</div>
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="border-t border-slate-800 bg-[#0B1120] px-4 py-8 text-center" data-purpose="site-footer">
+<div class="max-w-md mx-auto space-y-4">
+<!-- Brand & Tagline -->
+<div class="space-y-1">
+<div class="inline-flex items-center space-x-2">
+<div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">CF</div>
+<span class="text-sm font-bold text-white tracking-tight">Chidubem Franklin</span>
+</div>
+<p class="text-xs text-slate-400">
+          Learning, building, and growing through technology.
+        </p>
+</div>
+<!-- Quick Nav Links -->
+<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-400">
+<a class="hover:text-cyan-400 transition" href="#hero">Home</a>
+<a class="hover:text-cyan-400 transition" href="#about">About</a>
+<a class="hover:text-cyan-400 transition" href="#technologies">Stack</a>
+<a class="hover:text-cyan-400 transition" href="#projects">Projects</a>
+<a class="hover:text-cyan-400 transition" href="#skills">Skills</a>
+<a class="hover:text-cyan-400 transition" href="#contact">Contact</a>
+</div>
+<!-- Divider -->
+<div class="border-t border-slate-800/80 pt-4 space-y-2">
+<div class="flex items-center justify-center space-x-4 text-slate-400">
+<a class="hover:text-cyan-400 text-xs transition" href="https://github.com" rel="noopener noreferrer" target="_blank">GitHub</a>
+<span>•</span>
+<a class="hover:text-cyan-400 text-xs transition" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<span>•</span>
+<a class="hover:text-cyan-400 text-xs transition" href="mailto:chidubem.franklin@example.com">Email</a>
+</div>
+<p class="text-[11px] text-slate-500">
+          © 2025 Chidubem Franklin. All rights reserved.
+        </p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="mobile-navigation-and-form">
+    // Toggle Mobile Navigation Drawer
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-nav-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+
+      // Close menu when clicking any nav anchor link
+      const links = mobileMenu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        });
+      });
+    }
+
+    // Interactive Demo Form Handler
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const successBanner = document.getElementById('form-success-banner');
+
+    if (contactForm && successBanner) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successBanner.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => {
+          successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      });
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
